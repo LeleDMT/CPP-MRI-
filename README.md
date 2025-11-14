@@ -45,9 +45,9 @@ If your scanner exports `.puls` files:
 - Place each `.puls` file **inside the same folder as the participant’s DICOMs**
 
 Example:
-CPP00291A/
+ID000001A/
 ├─ DICOM/
-├─ CPP00291A.puls
+├─ ID000001A.puls
 
 
 These files will be converted into BIDS physiology files later.
