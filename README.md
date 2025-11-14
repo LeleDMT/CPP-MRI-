@@ -63,9 +63,11 @@ You can use either **conda** or **venv**.
 
 ```bash
 conda create -n dicom2bids python=3.12
-conda activate dicom2bids```
+conda activate dicom2bids
+```
 
 ## 3.3 Install Required Packages
+
 using pip : 
 ```
 pip install -r requirements.txt
