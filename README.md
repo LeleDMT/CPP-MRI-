@@ -71,8 +71,78 @@ using pip :
 pip install -r requirements.txt
 ```
 
-using conda : 
+This will install all the packages listed in a document called requirements.txt in the code. If you are using a cond environment, you can also write : 
 ```
 conda install --file requirements.txt
 ```
+# 3. ⚙️ Configure the Conversion Notebook
 
+The workflow is executed through a Jupyter Notebook (e.g., Dicom2BIDS.ipynb).
+
+## 3.1 Define Paths Inside the Notebook
+
+At the top of the notebook you will define:
+📁 DICOM directory
+```
+dicom_dir = "/path/to/sourcedata/"
+```
+📁 Output BIDS directory
+```
+bids_dir = "/path/to/BIDS_output/"
+```
+🧬 dcm2bids JSON configuration
+```
+config = "/path/to/dcm2bids_config.json"
+```
+📊 Excel mapping file
+```
+excel_mapping_file = "/path/to/CPP_mapping.xlsx"
+```
+| RawID (from DICOM folder name) | BIDS_ID (anonymized ID) |
+| ------------------------------ | ----------------------- |
+| ID000011A                      | SDF45589                |
+| ID000012A                      | KVG89943                |
+
+4. ▶️ Run the Conversion Notebook
+
+The notebook is divided into clear execution blocks:
+
+1. Import dependencies
+2. Define input/output paths
+3. Load subject mapping
+4. Helper functions
+5. Run DICOM → BIDS conversion (dcm2bids)
+6. Run pydeface
+7. Physio extraction
+
+Douglas-compatible
+
+Allen-compatible
+
+8. Dry-run diagnostics
+👩‍💻 Executing Cells
+
+To run a cell:
+
+Click inside the cell
+
+Press Shift + Enter
+
+Run the notebook top to bottom, but wait until the large DICOM → BIDS conversion block completes before moving on.
+
+Recommended Workflow
+
+Run all cells up to DICOM → BIDS conversion
+
+Wait until all subjects finish converting
+
+Run the dry-run physiology checker
+
+If .puls files are detected, run the appropriate converter:
+
+Douglas physiology converter
+
+Allen physiology converter
+
+Why two converters?
+Because scanners at different centers generate .puls files with different formats.
