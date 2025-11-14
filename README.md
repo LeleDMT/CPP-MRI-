@@ -1,5 +1,4 @@
 # 🧠 DICOM-to-BIDS Conversion Pipeline  
-*A Python-based workflow for MRI datasets with optional physiological data extraction*
 The goal of this project is to convert raw MRI data from DICOM format to BIDS (Brain Imaging Data Structure) format using a Python-based workflow for the Center for Precision Psychiatry. The steps are designed for users with little or no coding experience. 
 
 This repository provides a **fully automated workflow** for converting raw MRI **DICOM** datasets into **BIDS (Brain Imaging Data Structure)** format.  
@@ -105,7 +104,7 @@ excel_mapping_file = "/path/to/CPP_mapping.xlsx"
 | ID000011A                      | SDF45589                |
 | ID000012A                      | KVG89943                |
 
-4. ▶️ Run the Conversion Notebook
+ # 4. ▶️ Run the Conversion Notebook
 
 The notebook is divided into clear execution blocks:
 
@@ -117,9 +116,6 @@ The notebook is divided into clear execution blocks:
 6. Run pydeface
 7. Physio extraction
 
-Douglas-compatible
-
-Allen-compatible
 
 8. Dry-run diagnostics
 👩‍💻 Executing Cells
