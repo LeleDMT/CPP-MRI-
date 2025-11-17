@@ -86,7 +86,7 @@ config = "/path/to/dcm2bids_config.json"
 ```
 excel_mapping_file = "/path/to/CPP_mapping.xlsx"
 ```
-For the Excel file, make sure that you excel file is made of the (1) alphanumerical code you want to assign to your participant and (2) it’s original ID, as shown in this table:  
+For the Excel file, make sure that you use the first two column of the excel file (or adapt in directly in the code with df.iloc) and that your file is made of the (1) alphanumerical code you want to assign to your participant and (2) it’s original ID, as shown in this table:  
 
 | BIDS_ID (anonymized ID) | RawID (from DICOM folder name) |
 | ------------------------| ------------------------------ |
