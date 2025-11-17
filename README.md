@@ -1,5 +1,5 @@
 # 🧠 DICOM-to-BIDS Conversion Pipeline  
-The goal of this project is to convert raw MRI data from DICOM format to BIDS (Brain Imaging Data Structure) format using a Python-based workflow for the Center for Precision Psychiatry. The steps are designed for users with little or no coding experience. 
+The goal of this project is to convert raw MRI data from DICOM format to BIDS (Brain Imaging Data Structure) format using a Python-based workflow. The steps are designed for users with little or no coding experience. 
 
 This repository provides a **fully automated workflow** for converting raw MRI **DICOM** datasets into **BIDS (Brain Imaging Data Structure)** format.  
 It supports:
@@ -10,21 +10,8 @@ It supports:
 - `dcm2bids` + `pydeface`  
 - physiology extraction into BIDS-compatible `physio.tsv.gz` files  
 
-The entire workflow is beginner-friendly and requires minimal coding knowledge.
-
 ---
 
-## 🚀 Features
-
-✔ Batch conversion of full DICOM datasets  
-✔ Automatic participant ID matching  
-✔ Integration with `dcm2bids` and `pydeface`  
-✔ Douglas + Allen `.puls` formats supported  
-✔ Dry-run mode for sanity checks  
-✔ BIDS-compliant physiology output  
-✔ Jupyter notebook: run step-by-step, safe and transparent  
-
----
 
 # 1. 📂 Prepare Your Data
 
@@ -67,7 +54,7 @@ conda activate dicom2bids
 
 ## 3.3 Install Required Packages
 
-using pip : 
+Using pip : 
 ```
 pip install -r requirements.txt
 ```
@@ -99,22 +86,22 @@ config = "/path/to/dcm2bids_config.json"
 ```
 excel_mapping_file = "/path/to/CPP_mapping.xlsx"
 ```
-| RawID (from DICOM folder name) | BIDS_ID (anonymized ID) |
-| ------------------------------ | ----------------------- |
-| ID000011A                      | SDF45589                |
-| ID000012A                      | KVG89943                |
+For the Excel file, make sure that you excel file is made of the (1) alphanumerical code you want to assign to your participant and (2) it’s original ID, as shown in this table:  
+
+| BIDS_ID (anonymized ID) | RawID (from DICOM folder name) |
+| ------------------------| ------------------------------ |
+| SDF45589                | ID000011A                      |
+| KVG89943                | ID000012A                      |
 
  # 4. ▶️ Run the Conversion Notebook
 
 The notebook is divided into clear execution blocks:
 
-1. Import dependencies
-2. Define input/output paths
-3. Load subject mapping
-4. Helper functions
-5. Run DICOM → BIDS conversion (dcm2bids)
-6. Run pydeface
-7. Physio extraction
+1. Import your package 
+2. Set your DICOM and BIDS path (change as needed) 
+3. Helper function (custom function in python that will be used later in the script) 
+4. DCM2BIDS conversion + Pydeface 
+5. Bidsphysio conversion 
 
 
 8. Dry-run diagnostics
