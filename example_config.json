@@ -1,0 +1,81 @@
+{
+  "descriptions": [
+    {
+      "id": "T1w",
+      "datatype": "anat",
+      "suffix": "T1w",
+      "criteria": {
+        "SeriesDescription": "*T1w*"
+      }
+    },
+    {
+      "id": "T2w",
+      "datatype": "anat",
+      "suffix": "T2w",
+      "criteria": {
+        "SeriesDescription": "*T2w*"
+      }
+    },
+    {
+      "id": "FLAIR",
+      "datatype": "anat",
+      "suffix": "FLAIR",
+      "criteria": {
+        "SeriesDescription": "*FLAIR*"
+      }
+    },
+    {
+      "id": "dwi",
+      "datatype": "dwi",
+      "suffix": "dwi",
+      "criteria": {
+        "SeriesDescription": "*dwi*"
+      }
+    },
+    {
+      "id": "bold",
+      "datatype": "func",
+      "suffix": "bold",
+      "custom_entities": ["task"],
+      "criteria": {
+        "SeriesDescription": "*bold*"
+      },
+      "sidecar_changes": {
+        "TaskName": "task"
+      }
+    },
+    {
+      "id": "fmap_AP",
+      "datatype": "fmap",
+      "suffix": "epi",
+      "criteria": {
+        "SeriesDescription": "*fmap*AP*"
+      }
+    },
+    {
+      "id": "fmap_PA",
+      "datatype": "fmap",
+      "suffix": "epi",
+      "criteria": {
+        "SeriesDescription": "*fmap*PA*"
+      }
+    },
+    {
+      "id": "asl",
+      "datatype": "perf",
+      "suffix": "asl",
+      "criteria": {
+        "SeriesDescription": "*ASL*"
+      }
+    }
+  ],
+
+  "post_op": [
+    {
+      "cmd": "pydeface --outfile dst_file src_file",
+      "datatype": "anat",
+      "suffix": ["T1w", "T2w", "FLAIR"]
+    }
+  ]
+}
+
