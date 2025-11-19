@@ -104,30 +104,4 @@ The notebook is divided into clear execution blocks:
 5. Bidsphysio conversion 
 
 
-8. Dry-run diagnostics
-👩‍💻 Executing Cells
-
-To run a cell:
-
-Click inside the cell
-
-Press Shift + Enter
-
-Run the notebook top to bottom, but wait until the large DICOM → BIDS conversion block completes before moving on.
-
-Recommended Workflow
-
-Run all cells up to DICOM → BIDS conversion
-
-Wait until all subjects finish converting
-
-Run the dry-run physiology checker
-
-If .puls files are detected, run the appropriate converter:
-
-Douglas physiology converter
-
-Allen physiology converter
-
-Why two converters?
-Because scanners at different centers generate .puls files with different formats.
+You can either run all cells, or use the dicom2bids.py file to run the whole script in one go.
